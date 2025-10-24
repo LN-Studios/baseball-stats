@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgw1s0avu477u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4o86"]
+bg_color = Color(0.984113, 0.34808, 0.40281, 1)
+
+[node name="DataEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f4o86")
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer"]
+layout_mode = 2
+current_tab = 1
+
+[node name="Player Edit" type="VBoxContainer" parent="PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="top row" type="HBoxContainer" parent="PanelContainer/TabContainer/Player Edit"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/TabContainer/Player Edit/top row"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+placeholder_text = "player name..."
+
+[node name="Button" type="Button" parent="PanelContainer/TabContainer/Player Edit/top row"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Add"
+
+[node name="Label" type="Label" parent="PanelContainer/TabContainer/Player Edit"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "player label"
+
+[node name="Play Edit" type="VBoxContainer" parent="PanelContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="player selector" type="OptionButton" parent="PanelContainer/TabContainer/Play Edit"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="play selector" type="OptionButton" parent="PanelContainer/TabContainer/Play Edit"]
+layout_mode = 2
+size_flags_horizontal = 4

@@ -1,25 +1,8 @@
 class_name Play extends Object
 
-enum {
-	None,
-	Error,
-	Item,
-	Walk,
-	Hitbypitch,
-	Ground,
-	Fly,
-	Strikeout,
-	StrikeoutLooking,
-	Doubleplay,
-	FieldersChoice,
-	Sacfly,
-	Sacbunt,
-	InfieldFly,
-}
-
 var data = {
 	bases = 0,
-	type = 0,
+	type = -1,
 	rbi = 0,
 }
 
@@ -35,16 +18,20 @@ func get_rbi() -> int:
 func is_atbat() -> bool:
 	var type = get_type()
 	return (
-		type != Walk && 
-		type != Hitbypitch && 
-		type != Sacfly && 
-		type != Sacbunt)
+		type != Result.Walk && 
+		type != Result.Hitbypitch && 
+		type != Result.Sacfly && 
+		type != Result.Sacbunt
+	)
 
 func is_hit() -> bool:
 	var type = get_type()
 	return (
-		get_bases() > 0 &&
+		is_on_base() &&
 		is_atbat() &&
-		type != Error &&
-		type != FieldersChoice
+		type != Result.Error &&
+		type != Result.FieldersChoice
 	)
+
+func is_on_base() -> bool:
+	return get_bases() > 0
