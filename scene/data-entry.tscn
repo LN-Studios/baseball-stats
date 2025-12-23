@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgw1s0avu477u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4o86"]
-bg_color = Color(0.984113, 0.34808, 0.40281, 1)
+[ext_resource type="StyleBox" uid="uid://dgd6dpwk1dvcj" path="res://style/main-style.tres" id="1_o2njq"]
 
 [node name="DataEntry" type="Control"]
 layout_mode = 3
@@ -18,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f4o86")
+theme_override_styles/panel = ExtResource("1_o2njq")
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer"]
 layout_mode = 2

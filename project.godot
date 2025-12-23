@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Signals="*res://global/signals.gd"
 Lib="*res://global/lib.gd"
 Result="*res://global/result.gd"
 
@@ -26,6 +27,7 @@ folder_colors={
 "res://class/": "pink",
 "res://global/": "blue",
 "res://scene/": "purple",
+"res://style/": "pink",
 "res://ui/": "green",
 "res://util/": "orange"
 }
